@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- DemoInfraListener 通过 META-INF/services/org.testng.ITestNGListener 注册（入口无关，
+     Maven suite / IDEA 单类运行均可拉起 WireMock） -->
+<suite name="light-api-demo" parallel="classes" thread-count="3">
+    <test name="demo">
+        <classes>
+            <class name="com.demo.lightapi.ProductApiTest"/>
+            <class name="com.demo.lightapi.AuthFlowTest"/>
+            <class name="com.demo.lightapi.MultiEnvClientTest"/>
+            <class name="com.demo.lightapi.FilterDemoTest"/>
+            <class name="com.demo.lightapi.RetryDemoTest"/>
+            <class name="com.demo.lightapi.OpenMeteoRealApiTest"/>
+            <class name="com.demo.lightapi.LoginDataDrivenTest"/>
+        </classes>
+    </test>
+</suite>

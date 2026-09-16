@@ -1,0 +1,28 @@
+light-api:
+  env: test
+  profiles:
+    test:
+      base-url: http://localhost:18090
+      auth:
+        type: token
+        login-path: /auth/login
+        username: qa
+        password: qa123
+        token-json-path: $.data.token
+        token-header: X-Token
+        token-prefix: ""
+      data-sources:
+        main:
+          url: jdbc:mysql://localhost:3307/huxuebao?useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+          username: root
+          password: root123
+    other:
+      base-url: http://localhost:18091
+    openmeteo:
+      base-url: https://api.open-meteo.com
+    usercenter:
+      base-url: http://127.0.0.1:8000
+  publish:
+    enabled: false
+  retry:
+    max-attempts: 1
